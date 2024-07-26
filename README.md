@@ -2,7 +2,7 @@ A custom Neo4j procedure that allows SPARQL-within-SQL queries to be returned in
 
 ## Installation Guide for Developers
 
-1. Clone the git repo using `git clone {pending}`
+1. Clone the git repo using `git clone`
 2. Build the .JAR using `mvn clean package`
 3. Copy the .JAR and included JDBC Driver to your Neo4j installation's `plugins` directory.
 4. Open your `neo4j.conf` file and add `openlink.*` to your `dbms.security.procedures.unrestricted` parameter value.
