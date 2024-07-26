@@ -1,6 +1,24 @@
 A custom Neo4j procedure that allows SPARQL-within-SQL queries to be returned in Neo4j without having to individually CAST each variable with an IRI or literal value.
 
-## Installation Guide for Developers
+https://github.com/danielhmills/virtuoso-to-neo4j-handler/releases/tag/v0.9.0
+
+## Quick Installation Guide
+1. Download the best matching .JAR file from the [Releases Section](https://github.com/danielhmills/virtuoso-to-neo4j-handler/releases) and the [Virtuoso JDBC Driver](http://download3.openlinksw.com/uda/virtuoso/jdbc/virtjdbc4_3.jar) into your Neo4j installation's `plugins` directory
+
+2. Open your `neo4j.conf` file and add `openlink.*` to your `dbms.security.procedures.unrestricted` parameter value.
+
+3. Restart your Neo4j instance.
+
+4. Test that the custom procedure has successfully installed by running:
+```
+CALL dbms.procedures() YIELD name
+WHERE name STARTS WITH 'openlink'
+RETURN name;
+```
+
+5. If successful, you can now use **openlink.virtuoso_jdbc_connect()**
+
+## Building and Installation Guide for Developers
 
 1. Clone the git repo using `git clone`
 2. Build the .JAR using `mvn clean package`
