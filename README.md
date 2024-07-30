@@ -36,7 +36,7 @@ RETURN name;
 
 7. If successful, you can now use **openlink.virtuoso_jdbc_connect()**
 
-## Querying
+## Usage
 
 The Procedure uses the following parameters
 
