@@ -45,19 +45,6 @@ The Procedure uses the following parameters
     * 'rw' = read/write
     * It is recommended to apply correct privileges on your Virtuoso instance rather than fully depending on this parameter.
 
-#### SPARQL
-
-SPARQL queries are executed using SPARQL-within-SQL:
-
-```
-SPARQL
-SELECT *
-FROM <urn:analytics>
-WHERE
-{
- ?a foaf:knows ?b.
-}
-```
 
 #### Cypher Merge Example
 
