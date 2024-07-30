@@ -1,4 +1,4 @@
-A custom Neo4j procedure that allows SPARQL-within-SQL queries to be returned in Neo4j without having to individually CAST each variable with an IRI or literal value.
+A custom Neo4j procedure that allows SPARQL-within-SQL queries to be returned in Neo4j over JDBC, with support for virtuoso.jdbc4.VirtuosoExtendedString and virtuoso.jdbc4.VirtuosoRdfBox classes.
 
 https://github.com/danielhmills/virtuoso-to-neo4j-handler/releases/tag/v0.9.0
 
