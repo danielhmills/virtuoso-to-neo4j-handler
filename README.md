@@ -58,3 +58,22 @@ WHERE
  ?a foaf:knows ?b.
 }
 ```
+
+#### Cypher Merge Example
+
+Returned SQL or SPARQL-within-SQL Query Results can be further queried and manipulated using Cypher
+
+```
+WITH 'jdbc:virtuoso://localhost:1111/UID=demo/PWD=demo/CHARSET=UTF-8' AS url
+CALL openlink.virtuoso_jdbc_connect(
+  url,
+  'SPARQL SELECT ?person1 ?person2  WHERE { SERVICE <https://linkeddata.uriburner.com/sparql/>{ SELECT * FROM <urn:analytics> WHERE {?person1 foaf:knows ?person2} }}',
+  'r'
+) YIELD value
+
+UNWIND value AS row
+WITH row['person1'] AS person1, row['person2'] AS person2
+MERGE (p1:Person {id: person1})
+MERGE (p2:Person {id: person2})
+MERGE (p1)-[:KNOWS]->(p2);
+```
