@@ -13,7 +13,7 @@ https://github.com/danielhmills/virtuoso-to-neo4j-handler/releases/tag/v0.9.0
 
 4. Test that the custom procedure has successfully installed by running:
 ```
-CALL dbms.procedures() YIELD name
+SHOW PROCEDURES YIELD name
 WHERE name STARTS WITH 'openlink'
 RETURN name;
 ```
@@ -29,9 +29,13 @@ RETURN name;
 5. Restart your Neo4j instance.
 6. Test that the custom procedure has successfully installed by running:
 ```
-CALL dbms.procedures() YIELD name
-WHERE name STARTS WITH 'openlink'
-RETURN name;
+WITH 'jdbc:virtuoso://localhost:1111/UID={username}/PWD={password}/CHARSET=UTF-8' AS url
+CALL openlink.virtuoso_jdbc_connect(
+  url,
+  'SPARQL SELECT ?person1 ?person2 WHERE { SERVICE <https://linkeddata.uriburner.com/sparql/>{ SELECT * FROM <urn:analytics> WHERE {?person1 foaf:knows ?person2} }}',
+  'r'
+) YIELD value
+RETURN value
 ```
 
 7. If successful, you can now use **openlink.virtuoso_jdbc_connect()**
@@ -53,7 +57,7 @@ The Procedure uses the following parameters
 Returned SQL or SPARQL-within-SQL Query Results can be further queried and manipulated using Cypher
 
 ```
-WITH 'jdbc:virtuoso://localhost:1111/UID=demo/PWD=demo/CHARSET=UTF-8' AS url
+WITH 'jdbc:virtuoso://localhost:1111/UID={username}/PWD={password}/CHARSET=UTF-8' AS url
 CALL openlink.virtuoso_jdbc_connect(
   url,
   'SPARQL SELECT ?person1 ?person2  WHERE { SERVICE <https://linkeddata.uriburner.com/sparql/>{ SELECT * FROM <urn:analytics> WHERE {?person1 foaf:knows ?person2} }}',
