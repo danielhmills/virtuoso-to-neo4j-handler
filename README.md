@@ -46,6 +46,13 @@ The Procedure uses the following parameters
     * 'rw' = read/write
     * It is recommended to apply correct privileges on your Virtuoso instance rather than fully depending on this parameter.
 
+#### JDBC URL Format
+
+A basic Virtuoso JDBC URL uses the following format:
+
+>jdbc:virtuoso://<Hostname>:<Port#>/DATABASE=<dbname>/UID=<user name>/PWD=<password>/
+
+* [Virtuoso JDBC Driver Documentation](https://docs.openlinksw.com/virtuoso/virtuosodriverjdbc/)
 
 #### Cypher Merge Example
 
