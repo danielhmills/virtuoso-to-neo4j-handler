@@ -2,6 +2,8 @@
 
 A custom Neo4j procedure that allows SPARQL-within-SQL queries to be returned in Neo4j over JDBC, with support for virtuoso.jdbc4.VirtuosoExtendedString and virtuoso.jdbc4.VirtuosoRdfBox classes.
 
+![Neo4j Demo](https://www.openlinksw.com/images/fint_demo_imgs/neo4j-example.gif)
+
 * [Latest Release](https://github.com/danielhmills/virtuoso-to-neo4j-handler/releases/tag/v0.9.0)
 
 ## Quick Installation Guide
