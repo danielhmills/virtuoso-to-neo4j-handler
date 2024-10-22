@@ -4,8 +4,6 @@ A custom Neo4j procedure that allows SPARQL-within-SQL queries to be returned in
 
 ![Neo4j Demo](https://www.openlinksw.com/images/fint_demo_imgs/neo4j-example.gif)
 
-* [Latest Release](https://github.com/danielhmills/virtuoso-to-neo4j-handler/releases/tag/v0.9.0)
-
 ## Quick Installation Guide
 1. Download the best matching .JAR file from the [Releases Section](https://github.com/danielhmills/virtuoso-to-neo4j-handler/releases) and the [Virtuoso JDBC Driver](http://download3.openlinksw.com/uda/virtuoso/jdbc/virtjdbc4_3.jar) into your Neo4j installation's `plugins` directory
 
